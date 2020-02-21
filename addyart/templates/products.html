@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static cms_tags menu_tags sekizai_tags %}
+
+{% block head %}
+    <link href="{% static "css/catalog.css" %}" rel="stylesheet">
+{% endblock head %}
+
+{% block content %}
+    {% placeholder "content" %}
+{% endblock content %}
+
+{% block tail %}
+    <script src="{% static "js/catalog.js" %}"></script>
+    <script src="{% static "js/lazyload.min.js" %}"></script>
+{% endblock tail %}

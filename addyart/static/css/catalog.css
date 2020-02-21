@@ -1,0 +1,10 @@
+#category-select {
+    position: relative;
+    width: 30%;
+    margin: 1em 0 1em 35%;
+    padding: 0.5em;
+    font-size: x-large;
+}
+.hidden {
+    display: none;
+}
