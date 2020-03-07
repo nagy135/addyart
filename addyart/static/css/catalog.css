@@ -5,6 +5,17 @@
     padding: 0.5em;
     font-size: x-large;
 }
+@media only screen and (max-width: 1000px) {
+    #category-select {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
 .hidden {
     display: none;
+}
+
+.product-item .title-wrapper {
+    position: relative;
+    max-width: 100%;
 }

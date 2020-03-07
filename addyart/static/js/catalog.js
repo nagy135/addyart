@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#category-select').change(function(e){
+    $('#category-select').change(function(){
         var chosen = $('#category-select option:selected')[0].value;
         showCategoryN(chosen, 5);
     });
@@ -8,13 +8,18 @@ $(document).ready(function(){
         // ... more custom settings?
     });
     showCategoryN("", 5);
+
+    $('.page-section').on('click', function(){
+        slug = $(this).attr('data-slug')
+        window.location.href = '/detail?slug=' + slug;
+    });
 });
 
 function showCategoryN(category, n){
     console.log("category", category);
     var sections = $('.page-section');
     sections.hide();
-    sections.each(function(i){
+    sections.each(function(){
         console.log($(this).attr('data-category'));
         if (  n > 0 ){
             if ( category != ""  ){

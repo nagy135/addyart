@@ -2,8 +2,8 @@
 
 
 <div class="container-fluid">
-    <select id="category-select" name="category">
-        <option value="">All</option>
+    <select id="category-select" name="category" class="rounded">
+        <option value="">Všetky</option>
         {% for category in categories %}
         <option value="{{ category.id }}">{{ category.name }}</option>
         {% endfor %}
@@ -13,13 +13,12 @@
 
 {% for product in products %}
     
-<section class="page-section hidden" data-category={{ product.category.id }}>
+<section class="page-section hidden" data-category={{ product.category.id }} data-slug={{ product.slug }}>
     <div class="container">
         <div class="product-item">
             <div class="product-item-title d-flex">
-                <div class="bg-faded p-5 d-flex {% if forloop.counter0|divisibleby:2 %}ml-auto{% else %}mr-auto{% endif %} rounded">
+                <div class="title-wrapper bg-faded p-5 d-flex {% if forloop.counter0|divisibleby:2 %}ml-auto{% else %}mr-auto{% endif %} rounded">
                     <h2 class="section-heading mb-0">
-                        {{ forloop.counter }}
                         <span class="section-heading-upper">{{ product.category }}</span>
                         <span class="section-heading-lower">{{ product.name }}</span>
                     </h2>

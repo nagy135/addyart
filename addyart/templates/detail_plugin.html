@@ -1,0 +1,33 @@
+{% load static sekizai_tags %}
+
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{% static "css/detail.css" %}"></script>{% endaddtoblock %}
+
+{% if product %}
+<section class="page-section hidden" data-category={{ product.category.id }} data-slug={{ product.slug }}>
+    <div class="container">
+    <a class="btn btn-secondary btn-xl btn-normal margin-separator" href="/produkty">Späť</a>
+        <div class="product-item">
+            <div class="product-item-title d-flex">
+                <div class="title-wrapper bg-faded p-5 d-flex ml-auto rounded">
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">{{ product.category }}</span>
+                        <span class="section-heading-lower">{{ product.name }}</span>
+                    </h2>
+                </div>
+            </div>
+            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 lazy" src="/media/{{ product.image }}" alt="lazy loaded">
+            <div class="product-item-description d-flex mr-auto">
+                <div class="bg-faded p-5 rounded">
+                    <p class="mb-0">{{ product.description }}</p>
+                </div>
+            </div>
+            <div class="product-item-title d-flex">
+                <div class="title-wrapper p-5 d-flex ml-auto rounded">
+                    <a class="btn btn-secondary btn-xl btn-normal ml-auto" href="mailto:nagyova.adriana@gmail.com?subject=Mám záujem&body=Dobrý%20deň%2C%0D%0A%0D%0Amám%20záujem%20o%20dielo%20s%20názvom%20{{ product.name }}%28id%3A%20{{ product.id }}%29%2C%20je%20toto%20dielo%20k%20dispozicii%3F
+">Mám záujem</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

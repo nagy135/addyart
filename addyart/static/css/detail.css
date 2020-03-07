@@ -1,0 +1,13 @@
+.btn-normal {
+    background-color: #e6a756;
+    color: #2e1711;
+    border-color: #2e1711;
+}
+.btn-normal:hover {
+    background-color: #2e1711;
+    color: #e6a756;
+    border-color: #2e1711;
+}
+.margin-separator {
+    margin-bottom: 1em;
+}
